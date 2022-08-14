@@ -1,0 +1,129 @@
+{%extends 'index.html'%}
+{%block product%}
+<!-- Panel Top #05 -->
+<nav class="panel top">
+  <div class="sections desktop">
+    <!-- <div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div> -->
+    <div class="left"><a href="#" title="Slides Framework"><img src="/static/assets/img/logo/logotop.png" style="width:82px;"></img></a></div>
+ 
+    <div class="center">
+      <ul class="menu ">
+        <li><a class="text-decoration-none text-white" href="{% url 'ind' %}">Home</a></li>
+        <li><a class="text-decoration-none text-white" href="#">About</a></li>
+        <li><a class="text-decoration-none text-white" href="#">Products</a></li>
+        <li><a class="text-decoration-none text-white" href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="right"><a class="button blue gradient" href="#">Profile</a><a class="button green gradient" href="#">Get App</a></div>
+  </div>
+  <div class="sections compact hidden">
+    <div class="left"><a href="#" title="Slides Framework"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="right"><span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span</div>
+  </div>
+</nav>
+
+<!-- Sidebar -->
+<nav class="sidebar" data-sidebar-id="1">
+  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
+  <div class="content">
+    <a href="#" class="logo"><svg width="37" height="30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-icon"></use></svg></a>
+    <ul class="mainMenu margin-top-3">
+      <li><a href="#">All Goods</a></li>
+      <li><a href="#">UI Kits</a></li>
+      <li><a href="#">Icons</a></li>
+      <li><a href="#">Mockups</a></li>
+      <li><a href="#">Toolkit</a></li>
+    </ul>
+    <ul class="subMenu small opacity-8">
+      <li><a href="#">Submit Product</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">License</a></li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <ul class="social opacity-8">
+      <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use></svg></a></li>
+      <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
+      <li><a href="#"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use></svg></a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Slide 1 (#34) -->
+<section class="slide fade-6 kenBurns">
+  
+  <div class="content">
+    <div class="container">
+      <div class="wrap">
+        
+        
+        <div class="fix-12-12" >
+          
+         
+          <ul class="flex fixedSpaces verticalCenter reverse">
+            
+            {% for photo in photos %}
+            <li class="col-4-12 img home-portfolio-image" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <div class="border-2 border bg-dark rounded-3 overflow-hidden" data>
+                <div style="background-image:url('{{photo.image.url}}') ; height: 200px;background-size: cover;">
+                </div>
+                <div>
+                  <p class="hero mb-0">
+                    {{photo.imgname}}
+                  </p>
+                </div>
+              </div>
+              
+            </li>
+            {%endfor%}
+          </ul>
+          
+          
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="background" style="background-image:url('/static/assets/img/background/img-09.jpg')"></div>
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+      <div class="modal-content">
+          <div class="modal-header">
+              <p class="modal-title hero" id="exampleModalLabel">Image Details</p>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-8 ">
+                      <img width="100%" src="/static/assets/img/background/img-09.jpg" alt="">
+
+                  </div>
+                  <div class="col-4">
+                      <p class="hero ">Details</p>
+                      <p class="fs-1">Available colours</p>
+                      <p class="fs-1"> red, green</p>
+
+                      <p class="fs-1">Available sizes</p>
+                      <p class="fs-1">Available colours</p>
+
+                    
+                  </div>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary fs-1" data-bs-dismiss="modal">Close</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+      </div>
+  </div>
+</div>
+
+{%endblock product%}

@@ -1,0 +1,107 @@
+{%extends 'adminhome.html'%}
+{%block mainpanel%}
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="col-8 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Edit Product Details</h4>
+          
+          <form class="forms-sample " method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-group">
+              <label >Product Name</label>
+              <input type="text" class="form-control text-light" value="{{data.imgname}}" name="imgname" placeholder="Name" required >
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="text" class="form-control text-light" value="{{data.description}}" name="description" placeholder="Description" required>
+            </div>
+
+            <div class="form-group">
+              <label for="size">Size Chart</label>
+              <input type="text" class="form-control text-light" value="{{data.size}}" name="size" placeholder="Size" required>
+            </div>
+
+            <div class="form-group">
+              <label for="fabric">Fabric</label>
+              <input type="text" class="form-control text-light" value="{{data.detail1}}" name="fabric" placeholder="Fabric" required>
+            </div>
+
+            <div class="form-group">
+              <label for="type">Type Of Dress</label>
+              <input type="text" class="form-control text-light" value="{{data.detail2}}" name="type" placeholder="Type Of Dress" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pattern">Pattern</label>
+              <input type="text" class="form-control text-light" value="{{data.detail3}}" name="pattern" placeholder="Pattern" required>
+            </div>
+
+            <div class="form-group">
+              <label for="dtls4">Details</label>
+              <input type="text" class="form-control text-light" value="{{data.detail4}}" name="dtls4" placeholder="Not Required">
+            </div>
+
+            <div class="form-group">
+              <label for="dtls5">Details</label>
+              <input type="text" class="form-control text-light" value="{{data.detail5}}" name="dtls5" placeholder="Not Required">
+            </div>
+
+            <div class="form-group">
+              <label for="category">Category:{{data.name}}</label>
+            </div>   
+
+            <div class="form-group">
+
+              <label>Upload main image</label>
+              <div class="input-group col-xs-12">
+                <input type="file" name="image"  class="form-control file-upload-browse text-light" placeholder="Upload Image" >
+              </div>
+
+              <label>Upload Slide image1</label>
+              <div class="input-group col-xs-12">
+                <input type="file" name="image1" class="form-control file-upload-browse text-light" placeholder="Upload Image" >
+              </div>
+
+              <label>Upload Slide image2</label>
+              <div class="input-group col-xs-12">
+                <input type="file" name="image2" class="form-control file-upload-browse text-light" placeholder="Upload Image" >
+              </div>
+
+              <label>Upload Slide image3</label>
+              <div class="input-group col-xs-12">
+                <input type="file" name="image3" " class="form-control file-upload-browse text-light" placeholder="Upload Image" >
+              </div>
+
+              <label>Upload Slide image4</label>
+              <div class="input-group col-xs-12">
+                <input type="file" name="image4" " class="form-control file-upload-browse text-light" placeholder="Upload Image">
+              </div>
+
+            </div>
+            <div class="form-group">
+              <button type="submit" onclick="return confirm('Sure to submit ?')" class="btn btn-primary me-2">Submit</button>
+             
+              <a href="{% url 'adhome' %}" class="btn btn-dark my-3">Cancel</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  <!-- partial:partials/_footer.html -->
+  <footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © helderlifestyle.com
+        2022</span>
+      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Developed and Designed by <a
+          href="">InstaDesign</a></span>
+    </div>
+  </footer>
+  <!-- partial -->
+</div>
+<!-- main-panel ends -->
+{%endblock mainpanel%}
